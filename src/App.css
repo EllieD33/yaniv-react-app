@@ -77,7 +77,7 @@ h3 {
   border-bottom: 1px solid #8FC0A9;
 }
 
-.NavBar {
+/* .NavBar {
   display: flex;
   font-size: 2rem;
   background-color: #68B0AB;
@@ -94,12 +94,12 @@ h3 {
   color: #FAF3DD;
   padding: 5px;
   border-radius: 2px;
-}
+} */
 
-.flex-scorecards {
+/* .flex-scorecards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   height: 85vh;
-}
+} */

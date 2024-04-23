@@ -1,0 +1,20 @@
+.NavBar {
+    display: flex;
+    font-size: 2rem;
+    background-color: #68B0AB;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.NavBar li {
+    list-style-type: none;
+    padding: 1rem;
+    margin-right: 2rem;
+}
+
+.NavBar a {
+    text-decoration: none;
+    color: #FAF3DD;
+    padding: 5px;
+    border-radius: 2px;
+}

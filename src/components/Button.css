@@ -1,0 +1,13 @@
+.Btn-small {
+    background-color: transparent;
+    border: 2px solid #68B0AB;
+    border-radius: 2px;
+    color: #696D7D;
+    font-size: 1.2rem;
+    width: calc(50px + 20 * ((100vw - 320px) / 680));
+    min-width: 70px;
+    height: 50px;
+    padding: 0.5rem;
+    margin: 1rem;
+    cursor: pointer;
+}
