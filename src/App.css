@@ -1,38 +1,105 @@
-.App {
+* {
+  margin: 0;
+}
+
+html { 
+  background-color: #FAF3DD;
+}
+
+.App-index {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #FAF3DD;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(25px + 6 * ((100vw - 320px) / 680));
+  color: #696D7D;
 }
 
-.App-link {
-  color: #61dafb;
+.App-index h1 {
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-index h1 {
+  border: none;
+}
+
+.Text-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+  padding: 0 20px;
+  width: calc(600px + 100 * ((100vw - 320px) / 680));
+  text-align: left;
+}
+
+ul {
+  background-color: #8FC0A9;
+  padding: 20px;
+  padding-left: 30px;
+  width: calc(500px + 100 * ((100vw - 320px) / 680));
+}
+
+.Text-Container li {
+  font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+  text-align: left;
+  padding-left: 10px;
+}
+
+.Text-Container li::marker {
+  content: "\2663";
+  color: #FAF3DD;
+}
+h1, h2, h3, p {
+  margin: 15px 0;
+}
+
+h1 {
+  font-size: calc(45px + 6 * ((100vw - 320px) / 680));
+  border-bottom: 1px solid #8FC0A9;
+}
+
+h2 {
+  font-size: calc(25px + 6 * ((100vw - 320px) / 680));
+  border-bottom: 1px solid #8FC0A9;
+  padding: 4px;
+}
+
+h3 {
+  font-size: calc(15px + 6 * ((100vw - 320px) / 680));
+  text-transform: uppercase;
+  border-bottom: 1px solid #8FC0A9;
+}
+
+.NavBar {
+  display: flex;
+  font-size: 2rem;
+  background-color: #68B0AB;
+  justify-content: flex-end;
+}
+
+.NavBar li {
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.NavBar a {
+  text-decoration: none;
+  color: #FAF3DD;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.flex-scorecards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
 }

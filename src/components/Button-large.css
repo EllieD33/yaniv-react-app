@@ -1,0 +1,48 @@
+.Btn {
+    background-color: transparent;
+    border: 2px solid #68B0AB;
+    border-radius: 2px;
+    color: #696D7D;
+    font-size: 2rem;
+    width: calc(300px + 100 * ((100vw - 320px) / 680));
+    padding: 2rem;
+    margin: 2rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #68B0AB;
+    color: #FAF3DD;
+}
+
+.Btn-small {
+    background-color: transparent;
+    border: 2px solid #68B0AB;
+    border-radius: 2px;
+    color: #696D7D;
+    font-size: 1.2rem;
+    width: calc(50px + 20 * ((100vw - 320px) / 680));
+    min-width: 70px;
+    height: 50px;
+    padding: 0.5rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.Btn-reset {
+    background-color: rgb(243, 22, 22);
+    border: 2px solid #b60909;
+    border-radius: 2px;
+    color: white;
+    font-size: 1.2rem;
+    width: calc(50px + 20 * ((100vw - 320px) / 680));
+    min-width: 70px;
+    height: 50px;
+    padding: 0.5rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+button[name="Reset"]:hover {
+    background-color: #b60909;
+}
