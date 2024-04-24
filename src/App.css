@@ -1,3 +1,11 @@
+:root {
+  --primary: #696D7D;
+  --secondary: #68B0AB;
+  --accent: #8FC0A9;
+  --light: #FAF3DD;
+  --dark: #383838;
+}
+
 * {
   margin: 0;
 }
@@ -6,57 +14,35 @@ html {
   background-color: #FAF3DD;
 }
 
-.App-index {
-  text-align: center;
-  background-color: #FAF3DD;
+main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.App-index {
+  text-align: center;
+  background-color: #FAF3DD;
+  
   font-size: calc(25px + 6 * ((100vw - 320px) / 680));
   color: #696D7D;
 }
 
-.App-index h1 {
+/* .App-index h1 {
   border: none;
 }
 
 .App-index h1 {
   border: none;
+} */
+
+p, li, h1, h2, h3, h4 {
+  color: var(--dark);
 }
 
-.Text-Container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-p {
-  font-size: calc(10px + 6 * ((100vw - 320px) / 680));
-  padding: 0 20px;
-  width: calc(600px + 100 * ((100vw - 320px) / 680));
-  text-align: left;
-}
-
-ul {
-  background-color: #8FC0A9;
-  padding: 20px;
-  padding-left: 30px;
-  width: calc(500px + 100 * ((100vw - 320px) / 680));
-}
-
-.Text-Container li {
-  font-size: calc(10px + 6 * ((100vw - 320px) / 680));
-  text-align: left;
-  padding-left: 10px;
-}
-
-.Text-Container li::marker {
-  content: "\2663";
-  color: #FAF3DD;
-}
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
   margin: 15px 0;
 }
 
@@ -77,24 +63,37 @@ h3 {
   border-bottom: 1px solid #8FC0A9;
 }
 
-/* .NavBar {
+p {
+  font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+  padding: 0 20px;
+  width: calc(600px + 100 * ((100vw - 320px) / 680));
+  text-align: left;
+}
+
+ul {
+  background-color: #8FC0A9;
+  padding: 20px;
+  padding-left: 30px;
+  width: calc(500px + 100 * ((100vw - 320px) / 680));
+}
+
+.Text-Container {
   display: flex;
-  font-size: 2rem;
-  background-color: #68B0AB;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
 
-.NavBar li {
-  list-style-type: none;
-  padding: 1rem;
+.Text-Container li {
+  font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+  text-align: left;
+  padding-left: 10px;
 }
 
-.NavBar a {
-  text-decoration: none;
+.Text-Container li::marker {
+  content: "\2663";
   color: #FAF3DD;
-  padding: 5px;
-  border-radius: 2px;
-} */
+}
+
 
 /* .flex-scorecards {
   display: flex;
