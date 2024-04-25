@@ -18,3 +18,8 @@
     padding: 5px;
     border-radius: 2px;
 }
+
+.NavBar a:hover {
+    text-decoration: underline;
+    
+}

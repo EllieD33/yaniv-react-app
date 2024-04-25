@@ -11,7 +11,7 @@
 }
 
 html { 
-  background-color: #FAF3DD;
+  background-color: var(--light);
 }
 
 main {
@@ -24,19 +24,11 @@ main {
 
 .App-index {
   text-align: center;
-  background-color: #FAF3DD;
+  background-color: var(--light);
   
   font-size: calc(25px + 6 * ((100vw - 320px) / 680));
-  color: #696D7D;
+  color: var(--primary);
 }
-
-/* .App-index h1 {
-  border: none;
-}
-
-.App-index h1 {
-  border: none;
-} */
 
 p, li, h1, h2, h3, h4 {
   color: var(--dark);
@@ -48,19 +40,19 @@ h1, h2, h3, h4, p {
 
 h1 {
   font-size: calc(45px + 6 * ((100vw - 320px) / 680));
-  border-bottom: 1px solid #8FC0A9;
+  border-bottom: 1px solid var(--accent);
 }
 
 h2 {
   font-size: calc(25px + 6 * ((100vw - 320px) / 680));
-  border-bottom: 1px solid #8FC0A9;
+  border-bottom: 1px solid var(--accent);
   padding: 4px;
 }
 
 h3 {
   font-size: calc(15px + 6 * ((100vw - 320px) / 680));
   text-transform: uppercase;
-  border-bottom: 1px solid #8FC0A9;
+  border-bottom: 1px solid var(--accent);
 }
 
 p {
@@ -71,10 +63,23 @@ p {
 }
 
 ul {
-  background-color: #8FC0A9;
+  background-color: var(--accent);
   padding: 20px;
   padding-left: 30px;
   width: calc(500px + 100 * ((100vw - 320px) / 680));
+}
+
+.Home-header {
+  display: flex;
+  font-size: 2rem;
+  background-color: var(--secondary);
+  justify-content: center;
+  width: 100%;  
+}
+
+.Home-header h1 {
+  border: none;
+  color: var(--light);
 }
 
 .Text-Container {
@@ -91,7 +96,7 @@ ul {
 
 .Text-Container li::marker {
   content: "\2663";
-  color: #FAF3DD;
+  color: var(--light);
 }
 
 
