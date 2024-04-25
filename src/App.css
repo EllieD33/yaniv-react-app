@@ -98,12 +98,3 @@ ul {
   content: "\2663";
   color: var(--light);
 }
-
-
-/* .flex-scorecards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: 85vh;
-} */

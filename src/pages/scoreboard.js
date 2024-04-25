@@ -1,4 +1,6 @@
 import NavBar from "../components/NavBar";
+import PlayerScoreCard from "../components/PlayerScoreCard";
+import "./scoreboard.css"
 
 const Scoreboard = () => {
     return (
@@ -7,6 +9,10 @@ const Scoreboard = () => {
                 <NavBar/>
             </nav>
             <main className="flex-scorecards">
+                <PlayerScoreCard text="Player 1" />
+                <PlayerScoreCard  text="Player 2" />
+                <PlayerScoreCard text="Player 3" />
+                <PlayerScoreCard  text="Player 4" />
             </main>
         </div>
     );
