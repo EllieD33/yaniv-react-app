@@ -10,9 +10,9 @@ const Scoreboard = () => {
             </nav>
             <main className="flex-scorecards">
                 <PlayerScoreCard text="Player 1" />
-                <PlayerScoreCard  text="Player 2" />
+                <PlayerScoreCard text="Player 2" />
                 <PlayerScoreCard text="Player 3" />
-                <PlayerScoreCard  text="Player 4" />
+                <PlayerScoreCard text="Player 4" />
             </main>
         </div>
     );
