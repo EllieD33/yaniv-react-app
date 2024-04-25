@@ -8,7 +8,7 @@ const Home = () => {
             </header>
             <nav>
                 <a href="/pages/rules"><Button text="Learn how to play" /></a>
-                <a href="/pages/scoreboard"><Button text="Take me to the scorecard" /></a>
+                <a href="/pages/scoreboard"><Button text="Take me to the scoreboard" /></a>
             </nav>
         </div>
     );

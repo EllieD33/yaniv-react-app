@@ -73,7 +73,7 @@ const Rules = () => {
                     <p>Once a player's score <strong>exceeds</strong> 100 points, they are out of the game. If a player's score lands on exactly 100 points, their score is halved to 50 points and they can continue to play from that score.</p>
                     <p><strong>The winner of the game is the last remaining player.</strong></p>
                 </div>
-                <a href="/Scorecard"><Button text="Take me to the scorecard" /></a>
+                <a href="/Scoreboard"><Button text="Take me to the scorecard" /></a>
             </main>
         </div>
     );
