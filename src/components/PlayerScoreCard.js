@@ -25,8 +25,8 @@ function PlayerScoreCard({text}){
 
     return (
         <div className="Player-scorecard">
-            <h1>{text}</h1>
-            <div>
+            <h2>{text}</h2>
+            <div className="Score-container">
                 <div className="Text-Container">
                     <p>{count}</p>
                 </div>
@@ -37,14 +37,14 @@ function PlayerScoreCard({text}){
                         onChange={handleOnChange}
                         className={"input"}
                     />
-                    <Button className={"Btn-small"} onClick={handleAddQuantity} text="Add"/>
+                    <Button name="Add" className={"Btn-small"} onClick={handleAddQuantity} text="Add"/>
                 
                     <Button name="Asaf" className={"Btn-small"} onClick={handleAsaf} text="Asaf!"/>
                 </div>
                 <div className="Score-btns">
-                <button name="Reset" className={"Btn-reset"}  onClick={handleResetCounter}>
-                Reset
-                </button>
+                    <button name="Reset" className={"Btn-reset"}  onClick={handleResetCounter}>
+                    Reset
+                    </button>
                 </div>
             </div>
         </div>

@@ -6,20 +6,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
-.Player-scorecard h1 {
+.Player-scorecard h2 {
     border: none;
+    font-size: 2.5rem;
 }
 
 .Player-scorecard p {
     text-align: center;
     font-size: 5rem;
+    max-width: 100%;
+}
+
+.Score-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
 }
 
 .Score-btns {
     display: flex;
     justify-content: center;
+    max-width: 100%;
 }
 
 .input {    

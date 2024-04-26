@@ -4,7 +4,7 @@ import "./scoreboard.css"
 
 const Scoreboard = () => {
     return (
-        <div className="App-pages">
+        <div>
             <nav>
                 <NavBar/>
             </nav>
