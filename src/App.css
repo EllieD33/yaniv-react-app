@@ -15,17 +15,16 @@ html {
 }
 
 main {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .App-index {
   text-align: center;
-  background-color: var(--light);
-  
+  background-color: var(--light);  
   font-size: calc(25px + 6 * ((100vw - 320px) / 680));
   color: var(--primary);
 }
@@ -80,6 +79,13 @@ ul {
 .Home-header h1 {
   border: none;
   color: var(--light);
+  padding: 1rem;
+}
+
+.Home-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Text-Container {

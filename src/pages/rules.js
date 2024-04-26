@@ -72,8 +72,8 @@ const Rules = () => {
                     <p>A total score tally is kept for each round.</p>
                     <p>Once a player's score <strong>exceeds</strong> 100 points, they are out of the game. If a player's score lands on exactly 100 points, their score is halved to 50 points and they can continue to play from that score.</p>
                     <p><strong>The winner of the game is the last remaining player.</strong></p>
-                </div>
-                <a href="/Scoreboard"><Button text="Take me to the scorecard" /></a>
+                </div>                
+                <Button linkTo="/pages/scoreboard" buttonText="Take me to the scorecard" />
             </main>
         </div>
     );
