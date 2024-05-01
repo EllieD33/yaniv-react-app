@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import './NumberOfPlayers.css'
 
 function NumberOfPlayers ({ onChange }) {
     const [numberOfPlayers, setNumberOfPlayers] = useState("");
@@ -19,25 +20,25 @@ function NumberOfPlayers ({ onChange }) {
     }
 
     return (
-        <div className="form-container">
+        <div>
             <form onSubmit={handleSubmit}>
-            <div className="centre-container-items">
-                <label htmlFor="numberOfPlayers">How many players?</label>
-            </div>
-            <div className="centre-container-items">
-                <div className="input-container">
-                        <input className="input" 
-                        type="number"
-                        inputMode="numeric"
-                        pattern="[0-9]*"
-                        id="numberOfPlayers"
-                        placeholder="0"
-                        value={numberOfPlayers}
-                        onChange={handleChange}
-                    ></input>
-                    <Button text="Add" onClick={handleClick}/>
+                <div>
+                    <label htmlFor="numberOfPlayers">How many players?</label>
                 </div>
-            </div>
+                <div>
+                    <div className="centre-container-items">
+                        <input className="input" 
+                            type="number"
+                            inputMode="numeric"
+                            pattern="[0-9]*"
+                            id="numberOfPlayers"
+                            placeholder="0"
+                            value={numberOfPlayers}
+                            onChange={handleChange}
+                        ></input>
+                        <Button text="Add" onClick={handleClick}/>
+                    </div>
+                </div>
             </form>
         </div>        
     );
