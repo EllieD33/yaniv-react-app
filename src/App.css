@@ -49,9 +49,14 @@ h2 {
 }
 
 h3 {
-  font-size: calc(15px + 6 * ((100vw - 320px) / 680));
+  font-size: calc(20px + 6 * ((100vw - 320px) / 680));
   text-transform: uppercase;
   border-bottom: 1px solid var(--accent);
+}
+
+h4 {
+  border-bottom: 1px solid var(--accent);
+  font-size: calc(15px + 6 * ((100vw - 320px) / 680));
 }
 
 p {
