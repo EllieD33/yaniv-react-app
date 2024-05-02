@@ -76,6 +76,6 @@ select::-ms-expand {
     pointer-events:none;
     transition:.25s all ease;
 }
-/* .select:hover::after {
+.select:hover::after {
     color: var(--secondary);
-} */
+}

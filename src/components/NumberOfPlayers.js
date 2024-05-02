@@ -3,7 +3,7 @@ import Button from "./Button";
 import './NumberOfPlayers.css'
 
 function NumberOfPlayers ({ onChange }) {
-    const [numberOfPlayers, setNumberOfPlayers] = useState("");
+    const [numberOfPlayers, setNumberOfPlayers] = useState(2);
 
     const handleChange = (event) => {
         const { value } = event.target;
