@@ -11,6 +11,7 @@ function PlayerScoreCard({text, onChange}){
     const [editing, setEditing] = useState(false);
     const [incrementedScore, setIncrementedScore] = useState(0);
     const [score, setScore] = useState(0);
+    const [showBack, setShowBack] = useState(false);
 
     const handleNameChange = (e) => {
         const newName = e.target.value;
@@ -26,13 +27,6 @@ function PlayerScoreCard({text, onChange}){
         setEditing(false);
     };
 
-    const handleAsaf = () => {
-        const newScore = incrementedScore + 25
-        if (newScore === 100) {
-            setIncrementedScore(50)
-        } else setIncrementedScore(incrementedScore + 25);
-    };
-
     const handleOnChange = (e) => {
         setScore(e.target.value);
     };
@@ -41,6 +35,10 @@ function PlayerScoreCard({text, onChange}){
         if (score) {
             const newScore = incrementedScore + parseInt(score, 10);
             setIncrementedScore(newScore);
+
+            if (newScore > 100) {
+                setShowBack(true);
+            }
             
             if (newScore === 100) {
                 setIncrementedScore(50);
@@ -48,9 +46,24 @@ function PlayerScoreCard({text, onChange}){
         }
     };
 
+    const handleAsaf = () => {
+        const newScore = incrementedScore + 25
+
+        if (newScore > 100) {
+            setShowBack(true);
+        }
+
+        if (newScore === 100) {
+            setIncrementedScore(50)
+        } else {
+            setIncrementedScore(incrementedScore + 25);            
+        }
+    };
+
     const handleResetIncrementedScore = () => {
         setIncrementedScore(0);
         setScore(0);
+        setShowBack(false);
     };
 
     return (
@@ -73,18 +86,28 @@ function PlayerScoreCard({text, onChange}){
             </div>
             <div className="Score-container">
                 <div className="Text-Container">
-                    <p>{incrementedScore}</p>
+                {showBack ? 
+                    <>
+                        <p className="back-content">Bust!</p>
+                        <div className="invisible-element" aria-hidden="true">
+                        </div>
+                    </>
+                    : <p>{incrementedScore}</p>
+                }
                 </div>
                 <div className="Score-btns" >
-                    <input
-                        type="text"
-                        value={score}
-                        onChange={handleOnChange}
-                        className={"score-input"}
-                    />
-                    <Button name="Add" className={"Btn-small"} onClick={handleAddscore} text="Add"/>
-                
-                    <Button name="Asaf" className={"Btn-small"} onClick={handleAsaf} text="Asaf!"/>
+                    {!showBack && (
+                        <>
+                        <input
+                            type="text"
+                            value={score}
+                            onChange={handleOnChange}
+                            className={"score-input"}
+                        />
+                        <Button name="Add" className={"Btn-small"} onClick={handleAddscore} text="Add"/>                    
+                        <Button name="Asaf" className={"Btn-small"} onClick={handleAsaf} text="Asaf!"/>
+                    </>
+                    )}
                 </div>
                 <div className="Score-btns">
                     <button name="Reset" className={"Btn-reset"}  onClick={handleResetIncrementedScore}>
