@@ -24,13 +24,15 @@ const Scoreboard = () => {
             <nav>
                 <NavBar/>
             </nav>
-            <div className="flex-scorecards">
-                <NumberOfPlayers onChange={handleNumberOfPlayersChange}/>
-            </div>
-            <main className="flex-scorecards">
-            {generatePlayerNames().map((PlayerName, index) => (
-                    <PlayerScoreCard key={index} text={PlayerName} />
-                ))}
+            <main>
+                <div className="flex-scorecards">
+                    <NumberOfPlayers onChange={handleNumberOfPlayersChange}/>
+                </div>
+                <div className="flex-scorecards">
+                {generatePlayerNames().map((PlayerName, index) => (
+                        <PlayerScoreCard key={index} text={PlayerName} />
+                    ))}
+                </div>
             </main>
         </div>
     );
