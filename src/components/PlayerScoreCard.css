@@ -1,5 +1,5 @@
 .Player-scorecard {
-    border: 2px solid #68B0AB;
+    border: 2px solid var(--secondary);
     border-radius: 10px;
     margin: 5px;
     width: calc(300px + 10 * ((100vw - 320px) / 680));
@@ -20,6 +20,28 @@
     max-width: 100%;
 }
 
+.name-container {
+    display: inline-flex; 
+    align-items: center; 
+}
+
+.edit-icon {
+    margin-left: 5px;
+    color: var(--primary
+    );
+    
+}
+
+.name-input {    
+    border: 2px solid var(--secondary);
+    border-radius: 2px;
+    font-size: 1.5rem;
+    width: 70%;
+    height: 30px;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
 .Score-container {
     display: flex;
     flex-direction: column;
@@ -32,8 +54,8 @@
     max-width: 100%;
 }
 
-.input {    
-    border: 2px solid #68B0AB;
+.score-input {    
+    border: 2px solid var(--secondary);
     border-radius: 2px;
     font-size: 1.5rem;
     width: calc(30px + 10 * ((100vw - 320px) / 680));

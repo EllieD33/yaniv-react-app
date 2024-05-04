@@ -6,17 +6,20 @@ import "./scoreboard.css"
 
 const Scoreboard = () => {
     const [numberOfPlayers, setNumberOfPlayers] = useState(0);
+    const [playerNames, setPlayerNames] = useState([]);
+
     const handleNumberOfPlayersChange = (value) => {
-        console.log("Number of players:", value);
         setNumberOfPlayers(value);
+        const defaultPlayerNames = Array.from({ length: value }, (_, i) => `Player ${i + 1}`);
+        setPlayerNames(defaultPlayerNames);
     };
 
-    const generatePlayerNames = () => {
-        const playerNames = [];
-        for (let i = 1; i <= numberOfPlayers; i++) {
-            playerNames.push(`Player ${i}`);
-        }
-        return playerNames;
+    const handlePlayerNameChange = (index, newName) => {
+        setPlayerNames((prevNames) => {
+            const newPlayerNames = [...prevNames];
+            newPlayerNames[index] = newName;
+            return newPlayerNames;
+        });
     };
 
     return (
@@ -29,8 +32,14 @@ const Scoreboard = () => {
                     <NumberOfPlayers onChange={handleNumberOfPlayersChange}/>
                 </div>
                 <div className="flex-scorecards">
-                {generatePlayerNames().map((PlayerName, index) => (
-                        <PlayerScoreCard key={index} text={PlayerName} />
+                {playerNames.map((playerName, index) => (
+                        <PlayerScoreCard
+                            key={index}
+                            text={playerName}
+                            onChange={(newName) =>
+                                handlePlayerNameChange(index, newName)
+                            }
+                        />
                     ))}
                 </div>
             </main>
