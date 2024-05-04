@@ -9,8 +9,8 @@ const EditIcon = () => <FontAwesomeIcon icon={faEdit} />;
 function PlayerScoreCard({text, onChange}){
     const [name, setName] = useState(text);
     const [editing, setEditing] = useState(false);
-    const [count, setCount] = useState(0);
-    const [quantity, setQuantity] = useState(0);
+    const [incrementedScore, setIncrementedScore] = useState(0);
+    const [score, setScore] = useState(0);
 
     const handleNameChange = (e) => {
         const newName = e.target.value;
@@ -27,25 +27,35 @@ function PlayerScoreCard({text, onChange}){
     };
 
     const handleAsaf = () => {
-        setCount(count + 25);
+        const newScore = incrementedScore + 25
+        if (newScore === 100) {
+            setIncrementedScore(50)
+        } else setIncrementedScore(incrementedScore + 25);
     };
 
     const handleOnChange = (e) => {
-        setQuantity(e.target.value);
+        setScore(e.target.value);
     };
 
-    const handleAddQuantity = () => {
-        if (quantity) setCount(count + parseInt(quantity, 10));
+    const handleAddscore = () => {
+        if (score) {
+            const newScore = incrementedScore + parseInt(score, 10);
+            setIncrementedScore(newScore);
+            
+            if (newScore === 100) {
+                setIncrementedScore(50);
+            }
+        }
     };
 
-    const handleResetCounter = () => {
-        setCount(0);
-        setQuantity(0);
+    const handleResetIncrementedScore = () => {
+        setIncrementedScore(0);
+        setScore(0);
     };
 
     return (
-        <div className="Player-scorecard" onDoubleClick={handleDoubleClick}>
-            <div className="name-container">
+        <div className="Player-scorecard">
+            <div className="name-container" onDoubleClick={handleDoubleClick}>
                 {editing ? (
                     <input
                         className="name-input"
@@ -63,21 +73,21 @@ function PlayerScoreCard({text, onChange}){
             </div>
             <div className="Score-container">
                 <div className="Text-Container">
-                    <p>{count}</p>
+                    <p>{incrementedScore}</p>
                 </div>
                 <div className="Score-btns" >
                     <input
                         type="text"
-                        value={quantity}
+                        value={score}
                         onChange={handleOnChange}
                         className={"score-input"}
                     />
-                    <Button name="Add" className={"Btn-small"} onClick={handleAddQuantity} text="Add"/>
+                    <Button name="Add" className={"Btn-small"} onClick={handleAddscore} text="Add"/>
                 
                     <Button name="Asaf" className={"Btn-small"} onClick={handleAsaf} text="Asaf!"/>
                 </div>
                 <div className="Score-btns">
-                    <button name="Reset" className={"Btn-reset"}  onClick={handleResetCounter}>
+                    <button name="Reset" className={"Btn-reset"}  onClick={handleResetIncrementedScore}>
                     Reset
                     </button>
                 </div>
