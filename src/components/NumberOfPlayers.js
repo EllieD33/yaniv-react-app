@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 import './NumberOfPlayers.css'
 
@@ -28,7 +28,6 @@ function NumberOfPlayers ({ onChange }) {
                     <div className="centre-container-items">
                         <div className="select">
                             <select
-                                className="dropdown"
                                 name="numberOfPlayers"
                                 id="numberOfPlayers"
                                 onChange={handleChange}

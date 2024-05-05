@@ -1,15 +1,5 @@
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button { 
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 form {
     padding-top: 2rem;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
 }
 
 label {
@@ -46,8 +36,10 @@ select::-ms-expand {
 .select {
     position: relative;
     display: flex;
-    width: calc(50px + 20 * ((100vw - 320px) / 680));
-    height: 3em;
+    width: calc(55px + 20 * ((100vw - 320px) / 680));
+    min-width: 70px;
+    max-width: 80px;
+    height: 50px;
     line-height: 3;
     background: var(--light);
     overflow: hidden;
