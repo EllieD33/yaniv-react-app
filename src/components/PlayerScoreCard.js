@@ -6,17 +6,14 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 const EditIcon = () => <FontAwesomeIcon icon={faEdit} />;
 
-function PlayerScoreCard({text, onChange}){
-    const [name, setName] = useState(text);
+function PlayerScoreCard({player, onUpdatePlayer, onStatusChange}){
+    const { name, score, status } = player;
     const [editing, setEditing] = useState(false);
-    const [incrementedScore, setIncrementedScore] = useState(0);
-    const [score, setScore] = useState(0);
-    const [showBack, setShowBack] = useState(false);
+    const [scoreInput, setScoreInput] = useState("");
 
     const handleNameChange = (e) => {
         const newName = e.target.value;
-        setName(newName);
-        onChange(newName);
+        onUpdatePlayer({ ...player, name: newName });
     };
 
     const handleDoubleClick = () => {
@@ -28,42 +25,44 @@ function PlayerScoreCard({text, onChange}){
     };
 
     const handleOnChange = (e) => {
-        setScore(e.target.value);
+        setScoreInput(e.target.value);
     };
 
     const handleAddscore = () => {
-        if (score) {
-            const newScore = incrementedScore + parseInt(score, 10);
-            setIncrementedScore(newScore);
+        if (scoreInput) {
+            const newScore = score + parseInt(scoreInput, 10);
+
+            let updatedPlayer = { ...player, score: newScore };
 
             if (newScore > 100) {
-                setShowBack(true);
+                updatedPlayer.status = 'bust';
+                onStatusChange(false);
+            } else if (newScore === 100) {
+                updatedPlayer.score = 50;
             }
-            
-            if (newScore === 100) {
-                setIncrementedScore(50);
-            }
+
+            onUpdatePlayer(updatedPlayer);
         }
     };
 
     const handleAsaf = () => {
-        const newScore = incrementedScore + 25
+        const newScore = score + 25;        
+
+        let updatedPlayer = { ...player, score: newScore };
 
         if (newScore > 100) {
-            setShowBack(true);
+            updatedPlayer.status = 'bust';
+            onStatusChange(false);
+        } else if (newScore === 100) {
+            updatedPlayer.score = 50;
         }
 
-        if (newScore === 100) {
-            setIncrementedScore(50)
-        } else {
-            setIncrementedScore(incrementedScore + 25);            
-        }
+            onUpdatePlayer(updatedPlayer);
     };
 
-    const handleResetIncrementedScore = () => {
-        setIncrementedScore(0);
-        setScore(0);
-        setShowBack(false);
+    const handleResetBtn = () => {
+        setScoreInput("");
+        onUpdatePlayer({ ...player, score: 0, status: 'active' });
     };
 
     return (
@@ -86,21 +85,21 @@ function PlayerScoreCard({text, onChange}){
             </div>
             <div className="Score-container">
                 <div className="Text-Container">
-                {showBack ? 
+                {status === 'bust' ? 
                     <>
                         <p className="back-content">Bust!</p>
                         <div className="invisible-element" aria-hidden="true">
                         </div>
                     </>
-                    : <p>{incrementedScore}</p>
+                    : <p>{score}</p>
                 }
                 </div>
                 <div className="Score-btns" >
-                    {!showBack && (
+                    {status !== 'bust' && (
                         <>
                         <input
                             type="text"
-                            value={score}
+                            value={scoreInput}
                             onChange={handleOnChange}
                             className={"score-input"}
                         />
@@ -110,7 +109,7 @@ function PlayerScoreCard({text, onChange}){
                     )}
                 </div>
                 <div className="Score-btns">
-                    <button name="Reset" className={"Btn-reset"}  onClick={handleResetIncrementedScore}>
+                    <button name="Reset" className={"Btn-reset"}  onClick={handleResetBtn}>
                     Reset
                     </button>
                 </div>

@@ -6,3 +6,9 @@
     align-items: center;
     text-align: center;
 }
+
+#winner {
+    border: none;
+    text-align: center;
+    font-size: 3rem;
+}
