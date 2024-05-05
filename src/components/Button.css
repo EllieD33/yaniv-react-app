@@ -30,4 +30,5 @@
 
 button[name="Reset"]:hover {
     background-color: #b60909;
+    color: white;
 }
