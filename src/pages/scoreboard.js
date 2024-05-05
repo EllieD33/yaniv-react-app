@@ -24,6 +24,7 @@ const Scoreboard = () => {
     };
 
     const handlePlayerNameChange = (index, newName) => {
+        console.log("Changing name of player at index", index, "to", newName);
         setPlayers((prevPlayers) => {
             const newPlayers = [...prevPlayers];
             newPlayers[index].name = newName;

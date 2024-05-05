@@ -8,11 +8,13 @@ const EditIcon = () => <FontAwesomeIcon icon={faEdit} />;
 
 function PlayerScoreCard({player, onUpdatePlayer, onStatusChange, inputDisabled}){
     const { name, score, status } = player;
+    const [playerName, setPlayerName] = useState(player.name);
     const [editing, setEditing] = useState(false);
     const [scoreInput, setScoreInput] = useState("");
 
     const handleNameChange = (e) => {
         const newName = e.target.value;
+        setPlayerName(newName)
         onUpdatePlayer({ ...player, name: newName });
     };
 
@@ -75,14 +77,13 @@ function PlayerScoreCard({player, onUpdatePlayer, onStatusChange, inputDisabled}
                     <input
                         className="name-input"
                         type="text"
-                        value={name}
+                        value={playerName}
                         onChange={handleNameChange}
                         onBlur={handleBlur}
-                        placeholder="Enter player name"
                         autoFocus
                     />
                 ) : (
-                    <h2>{name}</h2>
+                    <h2>{playerName}</h2>
                 )}
                 <span className="edit-icon">{<EditIcon />}</span>
             </div>
