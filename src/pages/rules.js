@@ -17,7 +17,7 @@ const Rules = () => {
                 <h2>How to play</h2>
                 <div className="Text-Container">
                     <p>The game is played across multiple rounds with a total score tally being kept throughout. The aim of the game is to earn as few points as possible. The player with the fewest points at the end of the game is the winner.</p>
-                    <p>Each round ends when a player declares "Yaniv!". Points are allocated to players based on the remaining cards in their hands.</p>
+                    <p>Each round ends when a player declares <b>"Yaniv!"</b>. Points are allocated to players based on the remaining cards in their hands.</p>
                 </div>
                 <h3>Dealing</h3>
                 <div className="Text-Container">
@@ -29,7 +29,7 @@ const Rules = () => {
                     <p>To take their go, players can either:</p>
                     <ul>
                         <li>Discard a card, or set of cards, and pick up a new card.</li>
-                        <li>Call "Yaniv!". But, players can only call "Yaniv!" if the total value of their hand is 5 or lower.</li>
+                        <li>Call <b>"Yaniv!"</b>. But, players can only call <b>"Yaniv!"</b> if the total value of their hand is 5 or lower.</li>
                     </ul>
                 </div>
                 <div className="Text-Container">
@@ -46,26 +46,33 @@ const Rules = () => {
                 </div>
                 <div className="Text-Container">
                 <h4>Picking up cards</h4>
-                    <p>Players must pick up 1 card after they have discarded (even if they have discarded more than 1 card).</p>
-                    <p>Players can pick up a card either from the top of the face-down stack or from top of the discard pile. When the previous player has laid down a set or a sequence, the current player may take either the top or bottom card from that set/sequence. Players are NOT allowed to pick up any cards from the middle of sets/sequences (for example, if the 6, 7, and 8 of Clubs were laid, only the 6 and the 8 can be picked up by the next player).</p>
-                    <p>If a player picks up a card of the same rank as the card they just laid, they can slam that card down onto the discard pile (without having to pick up another card) as long as the next player has not yet placed their discarded card down.</p>
-                    <p>If the stack is empty before someone calls "Yaniv!", the discard pile is shuffled and replaced as the stack. The last player's drop is kept out as the start of the new discard pile.</p>
+                <p>Players must pick up 1 card after they have discarded (even if they have discarded more than 1 card).</p>
+                <p>Players can pick up a card either from the top of the face-down stack or from top of the discard pile.</p>
+                <p>If the previous player has laid down a set or a sequence, the current player may take either the top or bottom card from that set/sequence. Players are <b>not</b> allowed to pick up any cards from the middle of sets/sequences (for example, if the 6, 7, and 8 of Clubs were laid, only the 6 and the 8 can be picked up by the next player).</p>
+                <p>If a player picks up a card of the same rank as the card they just laid, they can slam that card down onto the discard pile (without having to pick up another card) as long as the next player has not yet placed their discarded card down.</p>
+                <p>If the stack is empty before someone calls <b>"Yaniv!"</b>, the discard pile is shuffled and replaced as the stack. The last player's drop is kept out as the start of the new discard pile.</p>
                 </div>
                 <div className="Text-Container">
-                <h4>Calling "Yaniv!"</h4>
-                    <p>A player can only call "Yaniv!" if the total score of the cards in their hand is 5 or less.</p>
-                    <p>"Yaniv!" can only be called at the start of a player's turn, instead of discarding cards.</p>
-                    <p>The round ends when a player calls "Yaniv!". All players reveal their cards. Scores are added up and recorded for each player.</p>
+                <h4>Calling <b>"Yaniv!"</b></h4>
+                <p>A player can only call <b>"Yaniv!"</b> if the total score of the cards in their hand is 5 or less.</p>
+                <p><b>"Yaniv!"</b> can only be called at the start of a player's turn, instead of discarding cards.</p>
+                <p>The round ends when a player calls <b>"Yaniv!"</b>. All players reveal their cards. Scores are added up and recorded for each player.</p>
                 </div>
                 <div className="Text-Container">
                 <h4>Scoring a round</h4>
-                    <ul>
-                        <li>Jokers score 0 points.</li>
-                        <li>Ace is worth 1 point.</li>
-                        <li>Cards 2-10 score points equal to the number on the card (for instance, 3 of Diamonds is worth 3 points, 8 of Clubs is worth 8 points).</li>
-                        <li>Face cards (Jack, Queen, King) are 10 points.</li>
-                    </ul>
-                    <p>The person with the lowest scoring hand is the winner of the round. Everyone apart from the person who called "Yaniv!" gets points equal to the value of their hand. If the person who called "Yaniv!" has the hand worth the fewest points, they win the round and are given a score of zero. If, however, another player has a hand worth equal or fewer points than the person who called "Yaniv!", this is called an "Asaf". When an "Asaf" happens, the player who called "Yaniv!" is given 25 points as a penalty (the player with the lowest scoring hand gets the same points as they otherwise would have - i.e. the value of their hand).</p>
+                <p><b>The person with the lowest scoring hand is the winner of the round.</b></p>
+                <p>Cards are valued as follows: </p>
+                <ul>
+                    <li>Jokers score 0 points.</li>
+                    <li>Ace is worth 1 point.</li>
+                    <li>Cards 2-10 score points equal to the number on the card.</li>
+                    <li>Face cards (Jack, Queen, King) are 10 points.</li>
+                </ul>
+                <p>Everyone apart from the person who called <b>"Yaniv!"</b> gets points equal to the value of their hand.</p>
+                <p>If the person who called <b>"Yaniv!"</b> has the hand worth the fewest points, they win the round and are given a score of zero.</p>
+                <p>If another player has a hand worth equal or fewer points than the person who called <b>"Yaniv!"</b>, this is called an <b>"Asaf"</b>.</p>
+                <p>When an <b>"Asaf"</b> happens, the player who called <b>"Yaniv!"</b> is given 25 points as a penalty.</p>
+                <p>The player with the lowest scoring hand gets the same points as they otherwise would have - i.e. the value of their hand.</p>
                 </div>
                 <div className="Text-Container">
                 <h4>Ending the game</h4>

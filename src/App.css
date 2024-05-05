@@ -61,9 +61,9 @@ h4 {
 }
 
 p {
-  font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+  font-size: 1rem;
   padding: 0 20px;
-  width: calc(600px + 100 * ((100vw - 320px) / 680));
+  width: 80%;
   text-align: left;
 }
 
@@ -71,7 +71,7 @@ ul {
   background-color: var(--accent);
   padding: 20px;
   padding-left: 30px;
-  width: calc(500px + 100 * ((100vw - 320px) / 680));
+  width: 70%;
 }
 
 .Home-header {
@@ -98,13 +98,14 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 100%;
+  width: 100%;
 }
 
 .Text-Container li {
-  font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+  font-size: 1rem;
   text-align: left;
   padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 .Text-Container li::marker {
