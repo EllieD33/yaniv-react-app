@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/yaniv-react-app/static/css/main.92db615e.css",
+    "main.js": "/yaniv-react-app/static/js/main.0833d55e.js",
+    "static/js/453.ed3810f9.chunk.js": "/yaniv-react-app/static/js/453.ed3810f9.chunk.js",
+    "index.html": "/yaniv-react-app/index.html",
+    "main.92db615e.css.map": "/yaniv-react-app/static/css/main.92db615e.css.map",
+    "main.0833d55e.js.map": "/yaniv-react-app/static/js/main.0833d55e.js.map",
+    "453.ed3810f9.chunk.js.map": "/yaniv-react-app/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92db615e.css",
+    "static/js/main.0833d55e.js"
+  ]
+}
