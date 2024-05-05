@@ -73,6 +73,10 @@
     outline-color: var(--secondary);
 }
 
+.back-content {
+    width: 100%;
+}
+
 .invisible-element {
     visibility: hidden;
     width: fit-content;
