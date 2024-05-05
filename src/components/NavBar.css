@@ -11,7 +11,6 @@
     list-style-type: none;
     background-color: var(--secondary);
     font-size: 2rem;
-    justify-content: end;
 }
 
 .Navbar-links {
