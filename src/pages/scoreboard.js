@@ -10,6 +10,7 @@ const Scoreboard = () => {
     const [winner, setWinner] = useState(null);
     const [players, setPlayers] = useState([]);
     const [newGameClicked, setNewGameClicked] = useState(false);
+    const [inputDisabled, setInputDisabled] = useState(false);
 
     const handleNumberOfPlayersChange = (value) => {
         setNumberOfPlayers(value);
@@ -50,6 +51,7 @@ const Scoreboard = () => {
         const declareWinner = () => {
             const winnerPlayer = players.find(player => player.status === 'active');
             setWinner(`${winnerPlayer.name} wins!`);
+            setInputDisabled(true);
         };
     
         useEffect(() => {
@@ -69,6 +71,7 @@ const Scoreboard = () => {
             setNumberOfPlayers(0);
             setPlayers([]);
             setNewGameClicked(false);
+            setInputDisabled(false);
         };
 
     return (
@@ -93,6 +96,8 @@ const Scoreboard = () => {
                             onChange={(newName) => handlePlayerNameChange(index, newName)}
                             onStatusChange={(active) => handleStatusChange(index, active)}
                             onUpdatePlayer={onUpdatePlayer}
+                            inputDisabled={inputDisabled}
+                            
                         />
                     ))}
                 </div>

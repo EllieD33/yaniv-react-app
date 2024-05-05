@@ -6,7 +6,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 const EditIcon = () => <FontAwesomeIcon icon={faEdit} />;
 
-function PlayerScoreCard({player, onUpdatePlayer, onStatusChange}){
+function PlayerScoreCard({player, onUpdatePlayer, onStatusChange, inputDisabled}){
     const { name, score, status } = player;
     const [editing, setEditing] = useState(false);
     const [scoreInput, setScoreInput] = useState("");
@@ -29,7 +29,7 @@ function PlayerScoreCard({player, onUpdatePlayer, onStatusChange}){
     };
 
     const handleAddscore = () => {
-        if (scoreInput) {
+        if (scoreInput && !inputDisabled) {
             const newScore = score + parseInt(scoreInput, 10);
 
             let updatedPlayer = { ...player, score: newScore };
@@ -46,23 +46,26 @@ function PlayerScoreCard({player, onUpdatePlayer, onStatusChange}){
     };
 
     const handleAsaf = () => {
-        const newScore = score + 25;        
-
-        let updatedPlayer = { ...player, score: newScore };
-
-        if (newScore > 100) {
-            updatedPlayer.status = 'bust';
-            onStatusChange(false);
-        } else if (newScore === 100) {
-            updatedPlayer.score = 50;
-        }
-
+        if(!inputDisabled){
+            const newScore = score + 25;        
+    
+            let updatedPlayer = { ...player, score: newScore };
+    
+            if (newScore > 100) {
+                updatedPlayer.status = 'bust';
+                onStatusChange(false);
+            } else if (newScore === 100) {
+                updatedPlayer.score = 50;
+            }
+    
             onUpdatePlayer(updatedPlayer);
+        }
     };
 
     const handleResetBtn = () => {
         setScoreInput("");
         onUpdatePlayer({ ...player, score: 0, status: 'active' });
+        
     };
 
     return (
