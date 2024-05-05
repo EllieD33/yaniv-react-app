@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
+import Button from "../components/Button-large"
 import PlayerScoreCard from "../components/PlayerScoreCard";
 import NumberOfPlayers from "../components/NumberOfPlayers";
 import "./scoreboard.css"
@@ -8,6 +9,7 @@ const Scoreboard = () => {
     const [numberOfPlayers, setNumberOfPlayers] = useState(0);
     const [winner, setWinner] = useState(null);
     const [players, setPlayers] = useState([]);
+    const [newGameClicked, setNewGameClicked] = useState(false);
 
     const handleNumberOfPlayersChange = (value) => {
         setNumberOfPlayers(value);
@@ -57,6 +59,17 @@ const Scoreboard = () => {
             }
         }, [players]);
 
+        const handleNewGameClick = () => {
+            setWinner(null); 
+            setNewGameClicked(true);
+            resetGame()
+        };
+    
+        const resetGame = () => {
+            setNumberOfPlayers(0);
+            setPlayers([]);
+            setNewGameClicked(false);
+        };
 
     return (
         <div>
@@ -64,8 +77,12 @@ const Scoreboard = () => {
                 <NavBar/>
             </nav>
             <main>
-            <div className="flex-scorecards">
-                    <NumberOfPlayers onChange={handleNumberOfPlayersChange}/>
+                <div className="flex-scorecards">
+                {numberOfPlayers === 0 && !newGameClicked ? (
+                        <NumberOfPlayers onChange={handleNumberOfPlayersChange}/>
+                    ) : (
+                        <Button name="new-game" buttonText="New Game" onClick={handleNewGameClick}/>
+                    )}
                 </div>
                 {winner && <h2 id="winner">{winner}</h2>}
                 <div className="flex-scorecards">
